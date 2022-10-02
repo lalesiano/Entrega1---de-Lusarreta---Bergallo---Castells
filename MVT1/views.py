@@ -1,18 +1,25 @@
+from datetime import date, datetime
 from django.http import HttpResponse
-from django.template import Context, Template
+from django.template import Context, Template, loader
+import random
+from MVT_App.models import Persona
 
-def agregar_personas(request, nombre):
-    cargar_archivo = open(r"C:\Users\alexis.delusarreta\Desktop\MVT_TP1\templates\template1.html", "r")
-    template = Template(cargar_archivo.read())
-    cargar_archivo.close()
-    contexto = Context({"nombre" : nombre})
-    template_renderizado = template.render(contexto)
+def crear_persona(request,nombre,apellido):
+
+    persona = Persona(nombre = nombre, apellido = apellido, numero_id = random.randrange(0,101), fecha_ingreso = datetime.now())
+    persona.save()
+
+    template = loader.get_template("crear_persona.html")
+    template_renderizado = template.render({"personas" : persona})
+
     return HttpResponse(template_renderizado)
 
-def ver_personas(request):
-    cargar_archivo = open(r"C:\Users\alexis.delusarreta\Desktop\MVT_TP1\templates\template1.html", "r")
-    template = Template(cargar_archivo.read())
-    cargar_archivo.close()
-    contexto = Context()
-    template_renderizado = template.render(contexto)
+def ver_persona(request):
+
+    personas = Persona.objects.all()
+
+
+    template = loader.get_template("ver_persona.html")
+    template_renderizado = template.render({"personas" : personas})
+
     return HttpResponse(template_renderizado)
