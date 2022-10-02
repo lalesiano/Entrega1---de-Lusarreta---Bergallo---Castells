@@ -20,6 +20,6 @@ from .views import ver_personas, agregar_personas
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('agregar-personas/<str:nombre>', agregar_personas),
+    path('agregar-personas/<str:nombre>/', agregar_personas),
     path('ver-personas/', ver_personas),
 ]
