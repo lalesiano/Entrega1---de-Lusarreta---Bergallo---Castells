@@ -7,11 +7,7 @@
     <title>MVT: de Lusarreta, Castells, Bergallo</title>
 </head>
 <body>
-  <h1>Listado de Personas:</h1>
-    {% for persona in personas %}
-    <Apellido:>Nombre: {{persona.nombre}} {{persona.apellido}}</li>
-    <li>Numero ID: {{persona.numero_id}}</li>
-    <li>Fecha de Ingreso: {{persona.fecha_ingreso}}</li>
-    {% endfor %}
+    <a class="navbar-brand" href={% url 'index' %}>Home</a>
+    <h1>Se ha creado una persona!</h1>
 </body>
 </html>

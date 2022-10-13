@@ -5,3 +5,7 @@ class Persona(models.Model):
     apellido = models.CharField(max_length=30)
     numero_id = models.IntegerField()
     fecha_ingreso = models.DateField(null=True)
+
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"
+    
