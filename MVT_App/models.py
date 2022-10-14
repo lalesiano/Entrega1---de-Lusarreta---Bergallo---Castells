@@ -1,8 +1,8 @@
 from django.db import models
 
 class Persona(models.Model):
-    nombre = models.CharField(max_length=30)
-    apellido = models.CharField(max_length=30)
+    nombre = models.CharField(max_length=30, null = True)
+    apellido = models.CharField(max_length=30, null = True)
     numero_id = models.IntegerField()
     fecha_ingreso = models.DateField(null=True)
 

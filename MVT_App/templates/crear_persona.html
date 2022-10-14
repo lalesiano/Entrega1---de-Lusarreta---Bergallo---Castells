@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<form action={% url 'crear_persona' %} method="POST">
+<form action={% url 'crear_persona' %} method="GET">
     {% csrf_token %}
     <input type="text" name="nombre" placeholder="Ingrese su nombre"><br>
     <input type="text" name="apellido" placeholder="Ingrese su apellido"><br>
     <input type="submit" value="Registrar">
-</form>
+
 {% endblock body %}
    
     
