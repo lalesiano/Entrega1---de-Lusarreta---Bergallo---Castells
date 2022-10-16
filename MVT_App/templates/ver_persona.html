@@ -1,12 +1,24 @@
 {% extends 'base.html' %}
-
 {% block body %} 
 
 <h1>Listado de Personas:</h1>
+
+<form action={% url 'ver_persona' %} method="GET">
+  
+      {{formulario}}
+  
+  <button>Buscar</button>
+</form>
+<p>
   {% for persona in personas %}
-  <Apellido:>Nombre: {{persona.nombre}} {{persona.apellido}}</li>
+  <li>Nombre: {{persona.nombre}} {{persona.apellido}}</li>
   <li>Numero ID: {{persona.numero_id}}</li>
   <li>Fecha de Ingreso: {{persona.fecha_ingreso}}</li>
+  <br>
   {% endfor %}
+
+</p>
+
+
 {% endblock body %}
  
