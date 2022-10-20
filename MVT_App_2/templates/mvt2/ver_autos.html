@@ -1,0 +1,25 @@
+{% extends 'mvt/base.html' %}
+{% block body %} 
+<a class='navbar-brand' href={% url 'ver_autos' %}>Crear Mascota</a>
+<h1>Listado de Autos:</h1>
+
+<form action={% url 'ver_autos' %} method="GET">
+  
+      {{form}}
+  
+  <button>Buscar</button>
+</form>
+<p>
+  {% for persona in personas %}
+  <li>Modelo: {{auto.modelo}}</li>
+  <li>Marca: {{auto.marca}}</li>
+  <li>Año: {{persona.ano}}</li>
+
+  <br>
+  {% endfor %}
+
+</p>
+
+
+{% endblock body %}
+ 

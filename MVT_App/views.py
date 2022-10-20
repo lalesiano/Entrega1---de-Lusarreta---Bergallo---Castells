@@ -13,10 +13,8 @@ def crear_persona(request):
         if formulario.is_valid():
             data = formulario.cleaned_data           
             nombre = data["nombre"]
-            apellido = data["apellido"]
-            #-----------------
-            fecha_ingreso = data.get("fecha_ingreso", datetime.now())
-            #-----------------
+            apellido = data["apellido"]           
+            fecha_ingreso = data["fecha_ingreso"] or datetime.now()
             persona = Persona(nombre = nombre, apellido = apellido, numero_id = random.randrange(0,101), fecha_ingreso = fecha_ingreso)
             persona.save()
             
@@ -24,7 +22,7 @@ def crear_persona(request):
     
     formulario = PersonaFormulario()
         
-    return render(request,"crear_persona.html",{"formulario" : formulario})
+    return render(request,"mvt/crear_persona.html",{"formulario" : formulario})
 
 
 def ver_persona(request):
@@ -38,14 +36,14 @@ def ver_persona(request):
         
     formulario = BusquedaPersonaFormulario()
     
-    return render(request, "ver_persona.html",{"personas" : personas, "formulario": formulario})
+    return render(request, "mvt/ver_persona.html",{"personas" : personas, "formulario": formulario})
 
 
 def index(request):
     
-    return render(request, "index.html")
+    return render(request, "mvt/index.html")
 
 
 def about(request):
     
-    return render(request, "about.html")
+    return render(request, "mvt/about.html")
