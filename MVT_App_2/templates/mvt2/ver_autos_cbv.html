@@ -9,13 +9,14 @@
 
 <h1>Listado de Autos:</h1>
 <p>
-  {% if autos %}
+  {% if object_list %}
 
-    {% for auto in autos %}
+    {% for auto in object_list %}
     <li>
       {{auto}}
       <a href={% url 'editar_auto' auto.id %}>Editar</a>
       <a href={% url 'eliminar_auto' auto.id %}>Eliminar</a>
+
     </li>
     <br>
     {% endfor %}

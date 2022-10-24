@@ -1,0 +1,17 @@
+{% extends 'mvt/base.html' %}
+
+{% block title_pagina %}
+<title>Eliminar auto</title>
+{% endblock title_pagina %}
+
+{% block body %}
+<form action={% url 'eliminar_auto' object.id %} method="POST">
+    {% csrf_token %}
+  <p>
+    ¿Seguro que desea eliminar el {{object}}?
+  </p>
+    <button>Eliminar</button>
+</form>
+{% endblock body %}
+   
+    
