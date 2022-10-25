@@ -23,9 +23,17 @@
          <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href={% url 'index' %}>Home</a>
-                <a class="navbar-brand" href={% url 'crear_persona' %}>Crear Personas</a>
+                {% comment %} <a class="navbar-brand" href={% url 'crear_persona' %}>Crear Personas</a> {% endcomment %}
                 <a class="navbar-brand" href= {% url 'ver_persona' %}>Ver Personas</a>
                 <a class="navbar-brand" href= {% url 'ver_autos' %}>Ver Autos</a>
+                {% if request.user.is_authenticated %}
+                <a class="navbar-brand" href= "#" >{{request.user.username}}</a>
+                <a class="navbar-brand" href= {% url 'logout' %}>Cerrar sesion</a>
+                {% else %}
+                <a class="navbar-brand" href= {% url 'login' %}>Iniciar sesion</a>
+                <a class="navbar-brand" href= {% url 'registrar' %}>Registrarse</a>
+
+                {% endif %}
             </div>
         </nav>
 

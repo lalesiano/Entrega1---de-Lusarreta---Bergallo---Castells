@@ -1,0 +1,17 @@
+{% extends 'mvt/base.html' %}
+
+{% block title_pagina %}
+<title>Crear Usuario</title>
+{% endblock title_pagina %}
+
+
+{% block body %}
+<form action={% url 'registrar' %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{formulario}}
+    </table>
+    <button>Registrarse</button>
+</form>
+{% endblock body %}
+   

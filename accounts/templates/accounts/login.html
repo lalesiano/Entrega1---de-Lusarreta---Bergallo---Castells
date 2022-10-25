@@ -1,0 +1,18 @@
+{% extends 'mvt/base.html' %}
+
+{% block title_pagina %}
+<title>Iniciar sesion</title>
+{% endblock title_pagina %}
+
+
+{% block body %}
+<form action={% url 'login' %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{formulario}}
+    </table>
+    <button>Iniciar sesion</button>
+</form>
+{% endblock body %}
+   
+    
