@@ -1,0 +1,16 @@
+{% extends 'mvt/base.html' %}
+
+{% block title_pagina %}
+<title>Cambiar contraseña</title>
+{% endblock title_pagina %}
+
+
+{% block body %}
+<form action={% url 'cambiar_contraseña' %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+    <button>Cambiar</button>
+</form>
+{% endblock body %}

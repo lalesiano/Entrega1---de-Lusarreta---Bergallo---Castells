@@ -1,0 +1,17 @@
+{% extends 'mvt/base.html' %}
+
+{% block title_pagina %}
+<title>Perfil</title>
+{% endblock title_pagina %}
+
+{% block body %}
+<h1>Información de usuario:</h1>
+<P>
+    <li>Nombre: {{request.user.first_name}}</li>
+    <li>Apellido: {{request.user.last_name}}</li>
+    <li>Email: {{request.user.email}}</li>
+</P>
+<p><a href= {% url 'editar_perfil' %}>Editar datos</a></p>
+<p><a href= {% url 'cambiar_contraseña' %}>Cambiar contraseña</a></p>
+
+{% endblock body %}

@@ -8,7 +8,7 @@ class ListaAutos(ListView):
      model = Autos
      template_name= "mvt2/ver_autos_cbv.html"
           
-class CrearAuto(CreateView):
+class CrearAuto(LoginRequiredMixin, CreateView):
      model = Autos
      success_url = "/autos/"
      template_name = "mvt2/crear_auto_cbv.html"
