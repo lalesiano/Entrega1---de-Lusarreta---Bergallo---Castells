@@ -1,6 +1,7 @@
 --------------------------------------
 MVT de LUSARRETA - BERGALLO - CASTELLS
 --------------------------------------
+LINK AL VIDEO:
 
 1 - Prender entorno virtual e instalar lo que marca el archivo requirements.txt.
 

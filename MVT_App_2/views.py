@@ -12,17 +12,15 @@ class CrearAuto(LoginRequiredMixin, CreateView):
      model = Autos
      success_url = "/autos/"
      template_name = "mvt2/crear_auto_cbv.html"
-     fields = ["marca","modelo","año"]
+     fields = ["marca","modelo","conductor","foto"]
 
 class EditarAuto(LoginRequiredMixin, UpdateView):
      model = Autos
      success_url = "/autos/"
      template_name = "mvt2/editar_auto_cbv.html"
-     fields = ["marca","modelo","año"]
+     fields = ["marca","modelo","conductor","foto"]
      
 class EliminarAutos(LoginRequiredMixin, DeleteView):
      model = Autos
      success_url = "/autos/"
      template_name = "mvt2/eliminar_auto_cbv.html"
-     
-#class VerAutos(ListView):
