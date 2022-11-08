@@ -5,7 +5,7 @@
 {% endblock title_pagina %}
 
 {% block body %}
-<form action={% url 'editar_auto' object.id %} method="POST">
+<form action={% url 'editar_auto' object.id %} method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <br>
     <table>
