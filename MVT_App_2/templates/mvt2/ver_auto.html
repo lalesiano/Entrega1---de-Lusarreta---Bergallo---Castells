@@ -1,0 +1,19 @@
+{% extends 'mvt/base.html' %}
+
+{% block title_pagina %}
+<title>Ver auto</title>
+{% endblock title_pagina %}
+
+{% block body %} 
+<p>
+    
+    <li>Modelo: {{autos.modelo}} </li> 
+    <li>Marca: {{autos.marca}}</li>  
+    <li>Conductor: {{autos.conductor}} </li> 
+    <li>Foto: <img src="{{autos.foto.url}}" alt=""></li> 
+    <li>Descripcion: {{autos.descripcion | safe}}</li> 
+    
+</p>
+
+
+{% endblock body %}

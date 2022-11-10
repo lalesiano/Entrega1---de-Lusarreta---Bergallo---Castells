@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "MVT_App",
     "MVT_App_2",
     "accounts",
+    "ckeditor",
 ]
 
 MIDDLEWARE = [
